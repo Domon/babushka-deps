@@ -1,6 +1,4 @@
-dep 'rbenv', template: 'bin' do
-  installs 'rbenv'
-end
+dep 'rbenv', template: 'bin'
 
 dep 'rbenv-default-gems', template: 'managed' do
   requires 'rbenv'
@@ -12,4 +10,8 @@ dep 'rbenv-default-gems', template: 'managed' do
   met? { shell("test -f #{script}") }
 
   installs 'rbenv-default-gems'
+end
+
+dep 'rbenv-ctags', template: 'bin' do
+  requires 'rbenv'
 end
